@@ -16,6 +16,19 @@
     <meta property="og:type" content="website" />
     <meta property="og:image" content="profile.svg" />
     <link rel="stylesheet" href="styles.css" />
+    <style>
+      .contact-title {
+        max-width: 780px;
+        text-wrap: balance;
+      }
+
+      @media (max-width: 680px) {
+        .contact-title {
+          font-size: clamp(31px, 10.5vw, 48px);
+          line-height: 1.16;
+        }
+      }
+    </style>
   </head>
   <body>
     <div class="progress" aria-hidden="true"><span></span></div>
@@ -243,5 +256,26 @@
     </dialog>
 
     <script src="script.js"></script>
+    <script>
+      (() => {
+        const sideButton = document.querySelector('[data-modal="side"]');
+        const modalContent = document.querySelector(".modal-content");
+
+        if (!sideButton || !modalContent) return;
+
+        sideButton.addEventListener("click", () => {
+          modalContent.innerHTML = `
+            <p class="eyebrow">Case Detail</p>
+            <h3>副業広告運用コンサル</h3>
+            <p>Meta広告の出稿準備から運用手順、案件獲得から初回出稿までを伴走サポート。物販・アパレルなど副業内容に合わせて、継続支援もご相談いただけます。</p>
+            <ul>
+              <li>内容: Meta広告の出稿準備、運用手順、改善の見方を整理</li>
+              <li>サポート: 案件獲得から初回出稿まで、MTGとチャットで対応</li>
+              <li>料金: 内容に応じて個別にご提案します</li>
+            </ul>
+          `;
+        });
+      })();
+    </script>
   </body>
 </html>
