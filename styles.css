@@ -459,7 +459,7 @@ p {
 
 .work-list {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 22px;
 }
 
@@ -521,14 +521,16 @@ p {
 }
 
 .writing-visual,
-.care-visual {
+.care-visual,
+.side-visual {
   align-items: center;
   justify-content: center;
   flex-direction: column;
 }
 
 .writing-visual span,
-.care-visual span {
+.care-visual span,
+.side-visual span {
   min-width: 150px;
   border: 1px solid rgba(23, 22, 20, 0.12);
   border-radius: 8px;
@@ -543,6 +545,20 @@ p {
   background:
     linear-gradient(135deg, rgba(29, 123, 112, 0.08), rgba(199, 149, 55, 0.12)),
     #ecf2ed;
+}
+
+.side-visual {
+  background:
+    linear-gradient(135deg, rgba(49, 95, 148, 0.12), rgba(200, 93, 77, 0.1)),
+    #eef2f6;
+}
+
+.side-visual span:nth-child(2) {
+  transform: translateX(18px);
+}
+
+.side-visual span:nth-child(3) {
+  transform: translateX(-16px);
 }
 
 .work-body {
@@ -764,7 +780,6 @@ p {
   }
 
   .intro-grid,
-  .work-list,
   .about-layout {
     grid-template-columns: 1fr;
   }
@@ -833,7 +848,7 @@ p {
 
   .filter-tabs {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(82px, 1fr));
     width: 100%;
   }
 
